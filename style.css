@@ -1,0 +1,112 @@
+/* style.css - Host Live Makeover custom styling (Sederhana) */
+
+/* Set global body font and smooth scroll */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333333;
+  background-color: #ffffff;
+}
+
+/* Custom background for sections */
+.bg-pink-light {
+  background-color: #fff5f6;
+}
+
+/* Custom colors and buttons */
+.text-pink {
+  color: #e83e8c;
+}
+
+.bg-pink {
+  background-color: #e83e8c;
+}
+
+.btn-pink {
+  background-color: #e83e8c;
+  color: #ffffff;
+  border: 1px solid #e83e8c;
+  font-weight: bold;
+}
+
+.btn-pink:hover {
+  background-color: #d63384;
+  color: #ffffff;
+  border-color: #d63384;
+}
+
+.btn-outline-pink {
+  color: #e83e8c;
+  border-color: #e83e8c;
+  font-weight: bold;
+}
+
+.btn-outline-pink:hover {
+  background-color: #e83e8c;
+  color: #ffffff;
+}
+
+/* Card hover animation - very simple border highlight */
+.card-hover {
+  transition: border-color 0.2s ease;
+  border: 1px solid rgba(0, 0, 0, 0.125) !important;
+}
+
+.card-hover:hover {
+  border-color: #e83e8c !important;
+}
+
+/* Custom styles for Accordion */
+.accordion-button:not(.collapsed) {
+  background-color: #fff5f6;
+  color: #e83e8c;
+  box-shadow: none;
+}
+
+.accordion-button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(232, 62, 140, 0.25);
+  border-color: #e83e8c;
+}
+
+/* Custom styles for form focus */
+.form-control:focus {
+  border-color: #e83e8c;
+  box-shadow: 0 0 0 0.25rem rgba(232, 62, 140, 0.25);
+}
+
+.navbar-brand {
+  font-size: 1.25rem;
+}
+
+.nav-link.active {
+  color: #e83e8c !important;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  color: #d63384 !important;
+}
+
+/* Badges */
+.badge-pink {
+  background-color: #fff5f6;
+  color: #e83e8c;
+  border: 1px solid rgba(232, 62, 140, 0.2);
+}
+
+.badge-purple {
+  background-color: #f3e8ff;
+  color: #7b2cbf;
+  border: 1px solid rgba(123, 44, 191, 0.2);
+}
+
+/* Small helper for responsive image alignment */
+@media (max-width: 991.98px) {
+  header img {
+    margin-top: 2rem;
+  }
+}
