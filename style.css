@@ -1,112 +1,562 @@
-/* style.css - Host Live Makeover custom styling (Sederhana) */
+/* style.css - Custom CSS Framework ("Bootstrap Buatan Sendiri") untuk Live Makeover Host */
 
-/* Set global body font and smooth scroll */
+/* Import Google Fonts untuk Tipografi Premium */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;600;700&display=swap');
+
+/* ================= DESAIN SISTEM & VARIABEL ================= */
+:root {
+  --primary-color: #ff477e;
+  --primary-hover: #ff7096;
+  --primary-dark: #d93864;
+  --primary-light: #fff0f3;
+  --dark-color: #1e1e24;
+  --light-color: #f8f9fa;
+  --text-color: #333333;
+  --text-muted: #666666;
+  --border-color: #e9ecef;
+  --border-light: #ffc2d1;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(255, 71, 126, 0.1);
+  --transition: all 0.3s ease;
+  --font-base: 'Plus Jakarta Sans', sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+}
+
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #333333;
+  font-family: var(--font-base);
+  color: var(--text-color);
   background-color: #ffffff;
+  line-height: 1.6;
 }
 
-/* Custom background for sections */
-.bg-pink-light {
-  background-color: #fff5f6;
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--dark-color);
+  font-weight: 700;
+  line-height: 1.2;
 }
 
-/* Custom colors and buttons */
-.text-pink {
-  color: #e83e8c;
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition);
 }
 
-.bg-pink {
-  background-color: #e83e8c;
+a:hover {
+  color: var(--primary-hover);
 }
 
-.btn-pink {
-  background-color: #e83e8c;
+/* ================= GRID SYSTEM KUSTOM (BOOTSTRAP BUATAN SENDIRI) ================= */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+[class*="col-"] {
+  padding: 15px;
+  width: 100%;
+  position: relative;
+}
+
+/* Grid columns */
+.col-12 { width: 100%; }
+.col-8 { width: 66.666%; }
+.col-6 { width: 50%; }
+.col-4 { width: 33.333%; }
+.col-3 { width: 25%; }
+
+/* Responsive Breakpoints */
+@media (max-width: 992px) {
+  .col-8, .col-6 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .col-4, .col-3 {
+    width: 50%;
+  }
+}
+
+@media (max-width: 576px) {
+  .col-4, .col-3 {
+    width: 100%;
+  }
+}
+
+/* Utility Margin & Padding */
+.py-5 { padding-top: 3rem; padding-bottom: 3rem; }
+.py-4 { padding-top: 2rem; padding-bottom: 2rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-3 { margin-bottom: 1rem; }
+.mb-4 { margin-bottom: 1.5rem; }
+.mt-3 { margin-top: 1rem; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.d-none { display: none; }
+
+/* ================= STRUKTUR LAYOUT SESUAI MOCKUP FOTO ================= */
+
+/* 1. Banner (Atas Halaman) */
+.header-banner {
+  border: 2px solid var(--dark-color);
+  background: linear-gradient(135deg, var(--primary-light) 0%, #fff 100%);
+  padding: 40px 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Hiasan Garis Diagonal Mockup pada Banner */
+.header-banner::before, .header-banner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 1.5px;
+  height: 100%;
+  background-color: rgba(30, 30, 36, 0.1);
+  z-index: 1;
+}
+.header-banner::before { left: 0; transform: skewX(60deg); transform-origin: top left; }
+.header-banner::after { right: 0; transform: skewX(-60deg); transform-origin: top right; }
+
+.banner-box {
+  display: inline-block;
+  border: 1px dashed var(--primary-color);
+  background-color: #ffffff;
+  padding: 10px 30px;
+  position: relative;
+  z-index: 2;
+  border-radius: 4px;
+}
+
+.banner-box h1 {
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  letter-spacing: 1px;
+}
+
+.banner-box p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 5px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* 2. Menu Navigasi (Model Flat Separator Pipa '|') */
+.custom-nav {
+  margin: 15px 0;
+  border-top: 1.5px solid var(--border-color);
+  border-bottom: 1.5px solid var(--border-color);
+  padding: 12px 0;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+
+.nav-item-link {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  padding: 5px 15px;
+}
+
+.nav-item-link:hover, .nav-item-link.active {
+  color: var(--primary-color);
+}
+
+.nav-separator {
+  color: var(--border-color);
+  font-weight: 300;
+  user-select: none;
+}
+
+/* 3. Greeting Box (Sisi Kanan di Bawah Menu) */
+.greeting-section {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 30px;
+}
+
+.greeting-box {
+  background-color: var(--primary-light);
+  border-left: 4px solid var(--primary-color);
+  padding: 12px 20px;
+  border-radius: 0 8px 8px 0;
+  text-align: left;
+  box-shadow: var(--shadow-sm);
+  max-width: 280px;
+}
+
+.greeting-text {
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 0.95rem;
+}
+
+.date-text {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 3px;
+}
+
+/* 4. Konten - Judul & Layout Halaman */
+.content-title {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.content-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 3px;
+  background-color: var(--primary-color);
+  border-radius: 2px;
+}
+
+/* Home Layout: Judul Berita (2 Kolom) */
+.news-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  background: #ffffff;
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+}
+
+.news-image-wrapper {
+  flex: 0 0 300px;
+  position: relative;
+  border: 2px solid var(--dark-color);
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+}
+
+/* Indikator Mockup X pada Gambar */
+.news-image-wrapper::before, .news-image-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.news-image-wrapper::before {
+  border-top: 1px solid rgba(30, 30, 36, 0.2);
+  transform: rotate(45deg);
+  transform-origin: top left;
+  width: 141.4%; /* sqrt(2) * 100% */
+}
+.news-image-wrapper::after {
+  border-bottom: 1px solid rgba(30, 30, 36, 0.2);
+  transform: rotate(-45deg);
+  transform-origin: bottom left;
+  width: 141.4%;
+}
+
+.news-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.news-text {
+  flex: 1;
+}
+
+.news-text p {
+  color: var(--text-color);
+  margin-bottom: 15px;
+  font-size: 1.05rem;
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .news-layout {
+    flex-direction: column;
+  }
+  .news-image-wrapper {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
+/* Gallery Grid Layout (8 Item dengan Keterangan) */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 992px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gallery-card {
+  border: 1px solid var(--border-color);
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.gallery-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-color);
+}
+
+.gallery-image-container {
+  position: relative;
+  border: 1.5px solid var(--dark-color);
+  border-radius: 6px;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  margin-bottom: 12px;
+}
+
+/* X Mockup untuk Galeri Gambar */
+.gallery-image-container::before, .gallery-image-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.gallery-image-container::before {
+  border-top: 1px solid rgba(30, 30, 36, 0.15);
+  transform: rotate(45deg);
+  transform-origin: top left;
+  width: 141.4%;
+}
+.gallery-image-container::after {
+  border-bottom: 1px solid rgba(30, 30, 36, 0.15);
+  transform: rotate(-45deg);
+  transform-origin: bottom left;
+  width: 141.4%;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-caption {
+  border: 1.5px solid var(--dark-color);
+  padding: 8px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  border-radius: 4px;
+  margin-top: auto;
+  transition: var(--transition);
+}
+
+.gallery-card:hover .gallery-caption {
+  background-color: var(--primary-color);
   color: #ffffff;
-  border: 1px solid #e83e8c;
-  font-weight: bold;
+  border-color: var(--primary-color);
 }
 
-.btn-pink:hover {
-  background-color: #d63384;
+/* Contact Us & About Us Layouts */
+.form-card {
+  border: 1px solid var(--border-color);
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: var(--shadow-sm);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--dark-color);
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid var(--border-color);
+  border-radius: 6px;
+  font-family: var(--font-base);
+  font-size: 0.95rem;
+  color: var(--dark-color);
+  transition: var(--transition);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(255, 71, 126, 0.15);
+}
+
+textarea.form-input {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.btn-submit {
+  display: block;
+  width: 100%;
+  background-color: var(--primary-color);
   color: #ffffff;
-  border-color: #d63384;
+  border: none;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  font-family: var(--font-heading);
 }
 
-.btn-outline-pink {
-  color: #e83e8c;
-  border-color: #e83e8c;
-  font-weight: bold;
+.btn-submit:hover {
+  background-color: var(--primary-dark);
+  box-shadow: var(--shadow-md);
 }
 
-.btn-outline-pink:hover {
-  background-color: #e83e8c;
-  color: #ffffff;
-}
-
-/* Card hover animation - very simple border highlight */
-.card-hover {
-  transition: border-color 0.2s ease;
-  border: 1px solid rgba(0, 0, 0, 0.125) !important;
-}
-
-.card-hover:hover {
-  border-color: #e83e8c !important;
-}
-
-/* Custom styles for Accordion */
-.accordion-button:not(.collapsed) {
-  background-color: #fff5f6;
-  color: #e83e8c;
+.btn-submit:disabled {
+  background-color: var(--text-muted);
+  cursor: not-allowed;
   box-shadow: none;
 }
 
-.accordion-button:focus {
-  box-shadow: 0 0 0 0.25rem rgba(232, 62, 140, 0.25);
-  border-color: #e83e8c;
+.custom-alert {
+  background-color: #d1e7dd;
+  color: #0f5132;
+  border: 1px solid #badbcc;
+  padding: 12px 20px;
+  border-radius: 6px;
+  margin-top: 20px;
+  font-size: 0.95rem;
+  font-weight: 500;
 }
 
-/* Custom styles for form focus */
-.form-control:focus {
-  border-color: #e83e8c;
-  box-shadow: 0 0 0 0.25rem rgba(232, 62, 140, 0.25);
+/* About Us Layout styling */
+.about-card {
+  border: 1px solid var(--border-color);
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 30px;
 }
 
-.navbar-brand {
-  font-size: 1.25rem;
+.about-intro {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin-bottom: 20px;
+  border-left: 4px solid var(--primary-color);
+  padding-left: 15px;
 }
 
-.nav-link.active {
-  color: #e83e8c !important;
-  font-weight: bold;
+.about-body p {
+  margin-bottom: 15px;
+  text-align: justify;
 }
 
-.nav-link:hover {
-  color: #d63384 !important;
+/* 5. Footer (Stretched CopyRight Box) */
+.footer-section {
+  border: 2px solid var(--dark-color);
+  background-color: var(--dark-color);
+  color: #ffffff;
+  padding: 25px 20px;
+  text-align: center;
+  border-radius: 8px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  position: relative;
+  box-shadow: var(--shadow-sm);
 }
 
-/* Badges */
-.badge-pink {
-  background-color: #fff5f6;
-  color: #e83e8c;
-  border: 1px solid rgba(232, 62, 140, 0.2);
+.footer-copyright {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
 }
 
-.badge-purple {
-  background-color: #f3e8ff;
-  color: #7b2cbf;
-  border: 1px solid rgba(123, 44, 191, 0.2);
+.footer-student-info {
+  font-size: 0.85rem;
+  color: #a0a0ab;
+  margin-top: 6px;
 }
 
-/* Small helper for responsive image alignment */
-@media (max-width: 991.98px) {
-  header img {
-    margin-top: 2rem;
-  }
+.footer-student-info strong {
+  color: var(--primary-light);
+}
+
+/* Back to Top button custom styling */
+#btnBackTop {
+  transition: var(--transition);
+}
+#btnBackTop:hover {
+  background-color: var(--primary-dark) !important;
+  transform: scale(1.1);
 }

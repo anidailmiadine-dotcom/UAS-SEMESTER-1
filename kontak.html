@@ -8,140 +8,93 @@
         content="Request Live Show - Kirimkan konsep makeover atau daftar model live streaming styling Anda.">
     <title>Request Live - Live Makeover Host</title>
 
-    <!-- Bootstrap 5.3.3 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
+    <!-- Custom CSS (Bootstrap Buatan Sendiri) -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- ================= NAVBAR ================= -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top shadow-sm">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">
-                <i class="bi bi-stars text-pink me-2"></i><span class="text-pink">Live Makeover Host</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Beranda</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="tentang.html">Tentang Show</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="koleksi.html">Tema Makeover</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="tips.html">Tips Styling</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="kontak.html">Request Live</a>
-                    </li>
-                </ul>
+    <!-- ================= HEADER BANNER ================= -->
+    <header class="container">
+        <div class="header-banner">
+            <div class="banner-box">
+                <h1>LIVE MAKEOVER HOST</h1>
+                <p>Virtual Fashion & Beauty Live Stream</p>
             </div>
-        </div>
-    </nav>
-
-    <!-- ================= INNER PAGE HEADER ================= -->
-    <header class="py-5 bg-pink-light text-center">
-        <div class="container my-4">
-            <span class="badge badge-pink px-3 py-2 rounded-pill mb-2 fw-semibold">Hubungi Kami</span>
-            <h1 class="display-6 fw-bold text-dark mb-0">Request Live Makeover</h1>
         </div>
     </header>
 
-    <!-- ================= HUBUNGI KAMI SECTION ================= -->
-    <section class="py-5" id="kontak">
-        <div class="container py-4">
-            <div class="row g-5">
-                <div class="col-lg-5">
-                    <span class="text-pink fw-bold text-uppercase d-block mb-2">Kirim Request</span>
-                    <h2 class="fw-bold mb-3 text-dark">Ingin Karakter Anda Didandani Live?</h2>
-                    <p class="text-muted mb-4">
-                        Apakah Anda ingin gaya busana atau konsep riasan karakter virtual Anda diulas dan dirias
-                        langsung oleh host profesional kami di sesi live show berikutnya? Isi formulir di samping untuk
-                        mengirimkan request!
-                    </p>
+    <!-- ================= NAVIGASI MENU (Flat Separator '|') ================= -->
+    <nav class="custom-nav">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-item-link">Home</a></li>
+                <li class="nav-separator">|</li>
+                <li><a href="koleksi.html" class="nav-item-link">Gallery</a></li>
+                <li class="nav-separator">|</li>
+                <li><a href="kontak.html" class="nav-item-link active">Contact Us</a></li>
+                <li class="nav-separator">|</li>
+                <li><a href="tentang.html" class="nav-item-link">About Us</a></li>
+            </ul>
+        </div>
+    </nav>
 
-                    <div class="d-flex mb-4">
-                        <div class="text-pink fs-4 me-3"><i class="bi bi-geo-alt-fill"></i></div>
-                        <div>
-                            <h6 class="fw-bold mb-0 text-dark">Lokasi Studio / Server</h6>
-                            <p class="text-muted small mb-0">Tanjung Duren, Jakarta Barat, Indonesia</p>
-                        </div>
-                    </div>
-                    <div class="d-flex mb-4">
-                        <div class="text-pink fs-4 me-3"><i class="bi bi-envelope-fill"></i></div>
-                        <div>
-                            <h6 class="fw-bold mb-0 text-dark">Hubungi Kami (Email)</h6>
-                            <p class="text-muted small mb-0">live.makeover.host.anidailmiadine@email.com</p>
-                        </div>
-                    </div>
-                    <div class="d-flex">
-                        <div class="text-pink fs-4 me-3"><i class="bi bi-instagram"></i></div>
-                        <div>
-                            <h6 class="fw-bold mb-0 text-dark">Instagram Resmi</h6>
-                            <p class="text-muted small mb-0">@makeoverid</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-7">
-                    <div class="card border shadow-sm p-4" style="border-radius: 8px;">
-                        <h4 class="fw-bold text-dark mb-4">Kirimkan Konsep Makeover Anda</h4>
-                        <form id="contactForm">
-                            <div class="mb-3">
-                                <label for="nameInput" class="form-label fw-semibold text-dark">Nama / ID Game Karakter
-                                    Anda</label>
-                                <input type="text" class="form-control" id="nameInput"
-                                    placeholder="Contoh: PrincessAura / #12345" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="emailInput" class="form-label fw-semibold text-dark">Alamat Email</label>
-                                <input type="email" class="form-control" id="emailInput" placeholder="nama@email.com"
-                                    required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="messageInput" class="form-label fw-semibold text-dark">Rencana Tema / Detail
-                                    Makeover</label>
-                                <textarea class="form-control" id="messageInput" rows="4"
-                                    placeholder="Jelaskan jenis pakaian, makeup, dan aksesoris yang ingin Anda lihat di sesi live streaming kami..."
-                                    required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-pink px-4 w-100 py-3 fw-bold" id="submitBtn">Kirim
-                                Request Makeover</button>
-                        </form>
-                        <div class="alert alert-success mt-3 d-none" id="successAlert" role="alert"
-                            style="border-radius: 4px;">
-                            <i class="bi bi-check-circle-fill me-2"></i> Terima kasih! Request konsep makeover Anda
-                            telah berhasil terkirim. Konsep terunik akan kami tampilkan langsung di live streaming
-                            berikutnya!
-                        </div>
-                    </div>
-                </div>
+    <!-- ================= GREETING & DATE (Sisi Kanan) ================= -->
+    <div class="container">
+        <div class="greeting-section">
+            <div class="greeting-box" id="dateTimeGreeting">
+                <div class="greeting-text">BEAUTY QUOTES</div>
+                <div class="date-text">Confidence is the best make up you can wear</div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- ================= FOOTER ================= -->
-    <footer class="bg-dark text-white py-4 border-top">
-        <div class="container text-center">
-            <p class="mb-1 fw-bold"><i class="bi bi-stars text-pink me-2"></i> Live Makeover Host</p>
-            <p class="text-muted small mb-0">&copy; 2026 Live Makeover Host. Dibuat untuk memenuhi tugas kuliah
-                Pemrograman Web 1.</p>
+    <!-- ================= KONTEN UTAMA (Contact Us) ================= -->
+    <main class="container">
+        <h2 class="content-title">Contact Us</h2>
+        <div class="form-card">
+            <h3 class="mb-3">Kirimkan Konsep Makeover Anda</h3>
+            <p class="text-muted mb-4" style="font-size: 0.95rem;">
+                Apakah Anda ingin gaya busana atau konsep riasan karakter virtual Anda diulas dan dirias langsung oleh host profesional kami di sesi live show berikutnya? Isi formulir di bawah ini!
+            </p>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="nameInput" class="form-label">Nama / ID Game Karakter Anda</label>
+                    <input type="text" class="form-input" id="nameInput"
+                        placeholder="Contoh: PrincessAura / #12345" required>
+                </div>
+                <div class="form-group">
+                    <label for="emailInput" class="form-label">Alamat Email</label>
+                    <input type="email" class="form-input" id="emailInput" placeholder="nama@email.com"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="messageInput" class="form-label">Rencana Tema / Detail Makeover</label>
+                    <textarea class="form-input" id="messageInput" rows="4"
+                        placeholder="Jelaskan jenis pakaian, makeup, dan aksesoris yang ingin Anda lihat di sesi live streaming kami..."
+                        required></textarea>
+                </div>
+                <button type="submit" class="btn-submit" id="submitBtn">Kirim Request Makeover</button>
+            </form>
+            <div class="custom-alert d-none" id="successAlert" role="alert">
+                <i class="bi bi-check-circle-fill me-2"></i> Terima kasih! Request konsep makeover Anda telah berhasil terkirim. Konsep terunik akan kami tampilkan langsung di live streaming berikutnya!
+            </div>
+        </div>
+    </main>
+
+    <!-- ================= FOOTER (CopyRight + Detail Mahasiswa) ================= -->
+    <footer class="container">
+        <div class="footer-section">
+            <div class="footer-copyright">CopyRight &copy; 2026 Anida Ilmiadine</div>
+            <div class="footer-student-info">
+                Dibuat oleh: <strong>Nadine</strong> | NIM: <strong>25011750265</strong> | Kelas: 01SIFK002 <strong>Pemrograman Web 1</strong>
+            </div>
         </div>
     </footer>
 
-    <!-- Bootstrap 5.3.3 JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
+    <!-- Custom JS (Logika Salam Dinamis & Interaktivitas) -->
     <script src="script.js"></script>
 </body>
 

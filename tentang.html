@@ -8,145 +8,81 @@
         content="Tentang Show Live Makeover - Pelajari peran host live streaming kecantikan virtual dan cara interaksi dengan pemirsa.">
     <title>Tentang Show - Live Makeover Host</title>
 
-    <!-- Bootstrap 5.3.3 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
+    <!-- Custom CSS (Bootstrap Buatan Sendiri) -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- ================= NAVBAR ================= -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top shadow-sm">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">
-                <i class="bi bi-stars text-pink me-2"></i><span class="text-pink">Live Makeover Host</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Beranda</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="tentang.html">Tentang Show</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="koleksi.html">Tema Makeover</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="tips.html">Tips Styling</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="kontak.html">Request Live</a>
-                    </li>
-                </ul>
+    <!-- ================= HEADER BANNER ================= -->
+    <header class="container">
+        <div class="header-banner">
+            <div class="banner-box">
+                <h1>LIVE MAKEOVER HOST</h1>
+                <p>Virtual Fashion & Beauty Live Stream</p>
             </div>
-        </div>
-    </nav>
-
-    <!-- ================= INNER PAGE HEADER ================= -->
-    <header class="py-5 bg-pink-light text-center">
-        <div class="container my-4">
-            <span class="badge badge-pink px-3 py-2 rounded-pill mb-2 fw-semibold">Mengenal Kami</span>
-            <h1 class="display-6 fw-bold text-dark mb-0">Tentang Show Live Makeover</h1>
         </div>
     </header>
 
-    <!-- ================= TENTANG KAMI SECTION ================= -->
-    <section class="py-5">
-        <div class="container py-4">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6 order-lg-last">
-                    <span class="text-pink fw-bold text-uppercase d-block mb-2">Mengapa Menjadi Host?</span>
-                    <h2 class="fw-bold mb-3 text-dark">Interaksi Real-Time & Kreativitas Mode Tanpa Batas</h2>
-                    <p class="text-muted mb-4">
-                        Menjadi host live streaming makeover bukan hanya tentang mendandani model, tetapi juga membangun
-                        interaksi seru dengan penonton yang menentukan pilihan makeup secara langsung. Padu padan gaun
-                        mewah, riasan wajah dramatis, hingga tatanan rambut menakjubkan di bawah sorotan lampu studio.
-                    </p>
-                    <p class="text-muted mb-4">
-                        Di portal <strong>Live Makeover Host</strong>, kami membagikan panduan styling terlengkap, tips
-                        pencahayaan live streaming yang profesional, hingga kurasi kosmetik ramah pemula yang mudah
-                        didapatkan.
-                    </p>
+    <!-- ================= NAVIGASI MENU (Flat Separator '|') ================= -->
+    <nav class="custom-nav">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-item-link">Home</a></li>
+                <li class="nav-separator">|</li>
+                <li><a href="koleksi.html" class="nav-item-link">Gallery</a></li>
+                <li class="nav-separator">|</li>
+                <li><a href="kontak.html" class="nav-item-link">Contact Us</a></li>
+                <li class="nav-separator">|</li>
+                <li><a href="tentang.html" class="nav-item-link active">About Us</a></li>
+            </ul>
+        </div>
+    </nav>
 
-                    <div class="row g-4">
-                        <div class="col-sm-6">
-                            <div class="d-flex align-items-center">
-                                <div class="bg-pink text-white rounded-circle p-2 me-3 d-flex align-items-center justify-content-center"
-                                    style="width: 42px; height: 42px;">
-                                    <i class="bi bi-brush-fill fs-5"></i>
-                                </div>
-                                <div>
-                                    <h6 class="fw-bold mb-0 text-dark">Riasan Wajah Kreatif</h6>
-                                    <small class="text-muted">Ribuan kombinasi kosmetik premium</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="d-flex align-items-center">
-                                <div class="bg-pink text-white rounded-circle p-2 me-3 d-flex align-items-center justify-content-center"
-                                    style="width: 42px; height: 42px;">
-                                    <i class="bi bi-gem fs-5"></i>
-                                </div>
-                                <div>
-                                    <h6 class="fw-bold mb-0 text-dark">Kombinasi Gaun Custom</h6>
-                                    <small class="text-muted">Aksesoris berkilau & mewah</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=800"
-                        class="img-fluid rounded shadow" alt="Bahan kosmetik dan makeup artist flatlay">
-                </div>
+    <!-- ================= GREETING & DATE (Sisi Kanan) ================= -->
+    <div class="container">
+        <div class="greeting-section">
+            <div class="greeting-box" id="dateTimeGreeting">
+                <div class="greeting-text">BEAUTY QUOTES</div>
+                <div class="date-text">Confidence is the best make up you can wear</div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- ================= STATS SECTION ================= -->
-    <section class="py-5 bg-light">
-        <div class="container text-center">
-            <div class="row g-4">
-                <div class="col-md-3">
-                    <h2 class="fw-bold text-pink display-5 mb-1">50+</h2>
-                    <p class="text-muted mb-0 fw-semibold">Rekomendasi Tema</p>
-                </div>
-                <div class="col-md-3">
-                    <h2 class="fw-bold text-pink display-5 mb-1">100K+</h2>
-                    <p class="text-muted mb-0 fw-semibold">Komunitas Aktif</p>
-                </div>
-                <div class="col-md-3">
-                    <h2 class="fw-bold text-pink display-5 mb-1">150+</h2>
-                    <p class="text-muted mb-0 fw-semibold">Tips Styling Teruji</p>
-                </div>
-                <div class="col-md-3">
-                    <h2 class="fw-bold text-pink display-5 mb-1">24/7</h2>
-                    <p class="text-muted mb-0 fw-semibold">Konsultasi Kreatif</p>
-                </div>
+    <!-- ================= KONTEN UTAMA (About Us) ================= -->
+    <main class="container">
+        <h2 class="content-title">About Us</h2>
+        <div class="about-card">
+            <div class="about-intro">
+                <strong>Website Live Makeover Host</strong> dibuat sebagai media informasi mengenai dunia fashion, beauty, dan live streaming. Website ini bertujuan membantu pengunjung mengenal peran seorang Live Makeover Host serta keterampilan dasar yang dibutuhkan untuk tampil percaya diri di depan kamera.                                              
+            </div>
+            <div class="about-body">
+                <p>
+                    Melalui website ini, pengunjung dapat melihat inspirasi makeup dan fashion pada halaman Gallery, mengenal tujuan pembuatan website pada halaman About Us, serta menghubungi kami melalui menu Contact Us apabila memiliki pertanyaan, kritik, atau saran.
+                </p>
+                <p>
+                    Website ini dikembangkan oleh Nadine sebagai salah satu tugas mata kuliah Pemrograman Web 1 menggunakan HTML, CSS, dan JavaScript. Semoga website ini bermanfaat dan dapat menambah wawasan mengenai dunia Live Makeover Host.
+                </p>
+                <p>
+                    Terima kasih telah berkunjung, mari kita wujudkan style impian bersama-sama!
+                </p>
             </div>
         </div>
-    </section>
+    </main>
 
-    <!-- ================= FOOTER ================= -->
-    <footer class="bg-dark text-white py-4 border-top">
-        <div class="container text-center">
-            <p class="mb-1 fw-bold"><i class="bi bi-stars text-pink me-2"></i> Live Makeover Host</p>
-            <p class="text-muted small mb-0">&copy; 2026 Live Makeover Host. Dibuat untuk memenuhi tugas kuliah
-                Pemrograman Web 1.</p>
+    <!-- ================= FOOTER (CopyRight + Detail Mahasiswa) ================= -->
+    <footer class="container">
+        <div class="footer-section">
+            <div class="footer-copyright">CopyRight &copy; 2026 Anida Ilmiadine</div>
+            <div class="footer-student-info">
+                Dibuat oleh: <strong>Nadine</strong> | NIM: <strong>25011750265</strong> | Kelas: 01SIFK002 <strong>Pemrograman Web 1</strong>
+            </div>
         </div>
     </footer>
 
-    <!-- Bootstrap 5.3.3 JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
+    <!-- Custom JS (Logika Salam Dinamis & Interaktivitas) -->
     <script src="script.js"></script>
 </body>
 

@@ -1,27 +1,47 @@
-// script.js - Live Makeover Host Interactivity
+// script.js - Live Makeover Host Interactivity (Tanpa Bootstrap)
 
 document.addEventListener("DOMContentLoaded", function () {
-  // ================= 1. DETAIL MODAL HANDLER =================
-  const detailButtons = document.querySelectorAll(".detail-btn");
-  const plantModalElement = document.getElementById("plantModal");
+  
+  // ================= 1. DYNAMIC TIME & GREETING HANDLER =================
+  function updateDateTimeGreeting() {
+    const greetingContainer = document.getElementById("dateTimeGreeting");
+    if (!greetingContainer) return;
 
-  if (plantModalElement) {
-    const plantModal = new bootstrap.Modal(plantModalElement);
-    const modalTitle = document.getElementById("plantModalLabel");
-    const modalDescription = document.getElementById("plantDescription");
+    const now = new Date();
+    const hours = now.getHours();
+    let greeting = "Selamat malam";
 
-    detailButtons.forEach((button) => {
-      button.addEventListener("click", function () {
-        const plantName = this.getAttribute("data-plant");
-        const plantDesc = this.getAttribute("data-desc");
+    if (hours >= 5 && hours < 11) {
+      greeting = "Selamat pagi";
+    } else if (hours >= 11 && hours < 15) {
+      greeting = "Selamat siang";
+    } else if (hours >= 15 && hours < 18) {
+      greeting = "Selamat sore";
+    }
 
-        modalTitle.textContent = "Detail Tema Style: " + plantName;
-        modalDescription.textContent = plantDesc;
+    const days = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+    const months = [
+      "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+      "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+    ];
 
-        plantModal.show();
-      });
-    });
+    const dayName = days[now.getDay()];
+    const date = now.getDate();
+    const monthName = months[now.getMonth()];
+    const year = now.getFullYear();
+
+    greetingContainer.innerHTML = `
+      <div class="greeting-text">${greeting}</div>
+      <div class="date-text">${dayName}, ${date} ${monthName} ${year}</div>
+    `;
   }
+
+  // Jalankan segera saat halaman dibuka
+  updateDateTimeGreeting();
+
+  // Update berkala setiap menit untuk memastikan ketepatan waktu
+  setInterval(updateDateTimeGreeting, 60000);
+
 
   // ================= 2. CONTACT FORM HANDLER =================
   const contactForm = document.getElementById("contactForm");
@@ -32,23 +52,22 @@ document.addEventListener("DOMContentLoaded", function () {
     contactForm.addEventListener("submit", function (e) {
       e.preventDefault();
 
-      // Disable button and show sending state
+      // Nonaktifkan tombol kirim & ubah status
       submitBtn.disabled = true;
-      submitBtn.innerHTML =
-        '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Mengirim...';
+      submitBtn.textContent = "Mengirim...";
 
-      // Simulate sending process (1 second)
+      // Simulasikan proses pengiriman formulir (1 detik)
       setTimeout(function () {
         submitBtn.disabled = false;
-        submitBtn.textContent = "Kirim Pesan";
+        submitBtn.textContent = "Kirim Request Makeover";
 
-        // Show success alert
+        // Tampilkan notifikasi sukses kustom
         successAlert.classList.remove("d-none");
 
-        // Reset form inputs
+        // Reset semua field form inputan
         contactForm.reset();
 
-        // Hide alert after 5 seconds
+        // Sembunyikan kembali notifikasi sukses setelah 5 detik
         setTimeout(function () {
           successAlert.classList.add("d-none");
         }, 5000);
@@ -56,17 +75,26 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+
   // ================= 3. BACK TO TOP BUTTON =================
   const btnBackTop = document.createElement("button");
   btnBackTop.id = "btnBackTop";
-  btnBackTop.className = "btn btn-pink rounded-circle shadow border-0 d-flex align-items-center justify-content-center text-white";
+  btnBackTop.className = "back-to-top";
+  
+  // Custom Styling via JS agar mudah
   btnBackTop.style.width = "45px";
   btnBackTop.style.height = "45px";
   btnBackTop.style.position = "fixed";
   btnBackTop.style.bottom = "35px";
   btnBackTop.style.right = "35px";
+  btnBackTop.style.backgroundColor = "#ff477e";
+  btnBackTop.style.color = "#ffffff";
+  btnBackTop.style.border = "none";
+  btnBackTop.style.borderRadius = "50%";
+  btnBackTop.style.cursor = "pointer";
   btnBackTop.style.display = "none";
   btnBackTop.style.zIndex = "1000";
+  btnBackTop.style.boxShadow = "0 4px 10px rgba(0,0,0,0.15)";
   btnBackTop.innerHTML = '<i class="bi bi-arrow-up"></i>';
 
   document.body.appendChild(btnBackTop);
@@ -82,7 +110,8 @@ document.addEventListener("DOMContentLoaded", function () {
   btnBackTop.addEventListener("click", function () {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: "smooth"
     });
   });
+
 });
